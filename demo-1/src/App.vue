@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <h1>App 根组件</h1>
+    <Test info="你好"></Test>
     <hr />
 
     <div class="box">
@@ -16,6 +17,7 @@
 // 1. 导入需要使用的 .vue 组件
 import Left from '@/components/Left.vue';
 import Right from '@/components/Right.vue';
+import Test from '@/components/Test.vue';
 
 export default {
   // 2. 注册组件
@@ -24,7 +26,8 @@ export default {
     // 'Left': Left // 全写形式
     // 在对象里面 键和值 一样可以简写，如下：
     Left,
-    "Right": Right
+    "Right": Right,
+    Test
  }
 }
 </script>
