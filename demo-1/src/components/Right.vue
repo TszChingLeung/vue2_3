@@ -3,7 +3,7 @@
     <h3>Right 组件</h3>
     <hr>
 
-    <MyCount></MyCount>
+    <MyCount :init="6"></MyCount>
   </div>
 </template>
 
