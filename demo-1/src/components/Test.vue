@@ -75,11 +75,16 @@ export default {
     },
     // 当数据变化后，为了能够操作到最新的 DOM 结构，必须把代码写到 updated 生命周期函数中
     updated() {
-        console.log('Updated')
+        // console.log('Updated')
+
+        // console.log(this.message)
+        // const dom = document.querySelector('#pppp')
+        // console.log(dom.innerHTML)
+    },
+    beforeDestroy() {
+        console.log('beforeDestroy')
 
         console.log(this.message)
-        const dom = document.querySelector('#pppp')
-        console.log(dom.innerHTML)
     }
 }
 </script>

@@ -1,7 +1,9 @@
 <template>
   <div class="app-container">
     <h1>App 根组件</h1>
-    <Test info="你好"></Test>
+
+    <button @click="flag = !flag">Toggle Flag</button>
+    <Test info="你好" v-if="flag"></Test>
     <hr />
 
     <div class="box">
@@ -20,6 +22,11 @@ import Right from '@/components/Right.vue';
 import Test from '@/components/Test.vue';
 
 export default {
+  data() {
+    return {
+      flag: true
+    }
+  },
   // 2. 注册组件
   components: {
     // 组件名称:要注册的组件
