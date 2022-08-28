@@ -7,7 +7,8 @@
     <div class="box">
       <!-- 渲染 Left 组件和 Right 组件 -->
       <Left :msg="message" :user="userinfo"></Left>
-      <Right></Right>
+      <!-- 绑定自定义时间 numchange -->
+      <Right @numchange="getNewCount"></Right>
     </div>
   </div>
 </template>
@@ -23,6 +24,13 @@ export default {
       userinfo: { name: 'wsc', age: 18 },
       // 定义 countFromSon 来接收子组件传递过来的数据
       countFromSon: 0
+    }
+  },
+  methods: {
+    // 获取子组件传递过来的数据
+    getNewCount(val) {
+      console.log('numchange 事件被触发了！', val)
+      this.countFromSon = val
     }
   },
   components: {

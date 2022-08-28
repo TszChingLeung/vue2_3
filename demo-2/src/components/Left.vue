@@ -7,12 +7,29 @@
     <button @click="msg = 'abc'">修改 msg </button>
     <!-- 使用这个方法可以修改父组件 App 中 data 属性的值，但是不建议这么使用 -->
     <button @click="user.name = 'zs'">修改 user</button>
+    <hr>
+
+    <button @click="send">把好诗发给 Right</button>
   </div>
 </template>
 
 <script>
+// 1. 导入 eventBus.js 模块
+import bus from './eventBus.js'
+
 export default {
-  props: ['msg', 'user']
+  props: ['msg', 'user'],
+  data() {
+    return {
+      str: '黑云压城城欲摧，甲光向日金鳞开。'
+    }
+  },
+  methods: {
+    send() {
+      // 2. 通过 eventBus 来发送数据
+      bus.$emit('share', this.str)
+    }
+  }
 }
 </script>
 
