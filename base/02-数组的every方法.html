@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-数组的every方法</title>
+</head>
+<body>
+    <script>
+        const arr = [
+            {id: 1, name: '西瓜', state: true},
+            {id: 2, name: '榴莲', state: true},
+            {id: 3, name: '草莓', state: true}
+        ]
+
+        // every 用来判断是否每一项都满足需求，满足返回 true ，不满足返回 false
+        // 需求：判断数组中，水果是否被全选了！
+        // 如果 state 全部为 true 则返回 true ，只要有一项是 false 都返回 false
+        const result = arr.every(item => item.state)
+        console.log(result)
+    </script>
+</body>
+</html>
